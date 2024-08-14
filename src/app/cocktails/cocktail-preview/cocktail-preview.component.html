@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="row m-0">
+    <div class="col-md-4 p-0">
+      <img class="card-img-top" [src]="cocktail().imageUrl">
+    </div>
+    <div class="col-md-8 p-0">
+      <div class="card-body">
+        <span
+          class="icon-star"
+          [class.active]="isFavorite"
+          [id]="cocktail().starIconId"
+          (click)="toggleFavorite()"
+        ></span>
+        <h4 class="card-title">
+          <a class="link-dark" [routerLink]="cocktail().id">
+            {{ cocktail().name }}
+          </a>
+        </h4>
+        <span class="card-text" [ngClass]="cocktail().alcoholTag">
+          {{ cocktail().alcoholDescription }}
+        </span>
+        <p id="ingredients" class="card-text">
+          {{ cocktail().formattedIngredients }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

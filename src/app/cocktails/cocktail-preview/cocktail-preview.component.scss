@@ -1,0 +1,44 @@
+.card {
+    border-radius: 10px;
+    border: 1px solid rgb(182, 182, 182);
+    max-width: 100%;
+    margin: 0;
+}
+
+.card-img-top {
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 10px 15px;
+}
+
+.icon-star {
+    position: absolute;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.card-title {
+    margin: 0 0 6px 0;
+}
+
+#ingredients {
+    font-size: smaller;
+    margin: 8px 0 0 0;
+}
+
+.link-dark {
+    text-decoration: none;
+    color: inherit;
+}
+  
+.link-dark:hover {
+    text-decoration: underline;
+}

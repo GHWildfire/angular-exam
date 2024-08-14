@@ -1,0 +1,55 @@
+<div id="container" class="mt-3">
+    <div class="row m-0">
+        <div id="back-container" class="p-0">
+            <button routerLink=".." class="btn btn-secondary m-0 mb-2">
+                <i class="bi bi-arrow-left-short"></i> Back
+            </button>
+        </div>
+    </div>
+    @if (error()) {
+        <div>
+            A problem occured while loading cocktail with id : {{ cocktailId() }}
+        </div>
+    }
+    @if (cocktail(); as cocktail) {
+        <div class="row m-0">
+
+            <div class="col-md-4 p-0">
+                <img id="cocktail-image" [src]="cocktail.imageUrl">
+            </div>
+
+            <div class="col-md-8 p-4">
+
+                <div class="m-0 d-inline d-flex">
+                    <h2 class="m-0">{{ cocktail.name }}</h2>
+                    <span 
+                        class="icon-star"
+                        [class.active]="isFavorite"
+                        [id]="cocktail.starIconId"
+                        (click)="toggleFavorite()"
+                    ></span>
+                </div>
+
+                <app-cocktail-details-line title="Type">
+                    <span class="card-text" [ngClass]="cocktail.alcoholTag">
+                        {{ cocktail.alcoholDescription }}
+                    </span>
+                </app-cocktail-details-line>
+
+                <app-cocktail-details-line title="Ingredients">
+                    <ul class="m-0">
+                        @for (ingredient of cocktail.ingredients; track $index) {
+                            <li>{{ ingredient }}</li>
+                        }
+                    </ul>
+                </app-cocktail-details-line>
+
+                <app-cocktail-details-line title="Instructions">
+                    {{ cocktail.instructions }}
+                </app-cocktail-details-line>
+
+            </div>
+
+        </div>
+    }
+</div>
